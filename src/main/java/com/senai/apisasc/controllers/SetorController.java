@@ -42,9 +42,6 @@ public class SetorController {
             @ModelAttribute SetorDto setorDto)
     {
 
-//        if (setorReposiroty.findByTitulo(titulo)) != null) {
-//            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Este Setor já está cadastrado!");
-//        }
         if (setorRepository.findByTitulo(titulo) != null) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Este Setor já está cadastrado!");
         }
@@ -59,6 +56,7 @@ public class SetorController {
 
         return ResponseEntity.status(HttpStatus.CREATED).body(setorSalvo);
     }
+
 
     @PutMapping(value = "/{idSetor}", consumes = {MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<Object> editarFabricante(@PathVariable(value = "idSetor") UUID id, @RequestBody @Valid SetorDto setorDto) {

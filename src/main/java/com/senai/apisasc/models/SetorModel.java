@@ -24,3 +24,4 @@ public class SetorModel implements Serializable {
 
     private String titulo;
 }
+
